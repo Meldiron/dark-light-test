@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+    <meta name="description" content="A simple Hello World page with light and dark themes.">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Light theme */
+        body {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .dark-only {
+            display: none;
+        }
+
+        .light-only {
+            display: block;
+        }
+
+        /* Dark theme */
+        @media (prefers-color-scheme: dark) {
+            .dark-only {
+                display: block;
+            }
+            .light-only {
+                display: none;
+            }
+            body {
+                background-color: #121212;
+                color: #ffffff;
+            }
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="dark-only" style="font-weight: bolder;">Dark-themed website</h1>
+        <h1 class="light-only" style="font-weight: bolder;">Light-themed website</h1>
+        <p style="font-size: 32px; line-height: 40px;">Color and title changes <br> to browser theme settings.</p>
+    </div>
+</body>
+</html>
